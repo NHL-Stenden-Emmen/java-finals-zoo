@@ -26,8 +26,10 @@ public class Dragon extends Fantasy
     @Override
     public boolean isDead()
     {
-        // TODO: Make this method.
-        return false;
+        LocalDate currentDate = LocalDate.now();
+        // When the birth date plus 350 years is before the current date
+        // the dragon should be dead, so it should return true;
+        return this.dateOfBirth.plusYears(350).minusMonths(this.depressionLevel).minusDays(1).isBefore(currentDate);
     }
 
 }
