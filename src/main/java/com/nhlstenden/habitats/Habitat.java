@@ -35,7 +35,7 @@ public abstract class Habitat
             totalAnimalVolume += animal.getVolume();
         }
 
-        if (animalToAdd.getVolume() < this.volume - totalAnimalVolume * 5)
+        if (animalToAdd.getVolume() * 5 > this.volume - totalAnimalVolume)
         {
             throw new AnimalDoesNotFitException();
         }
